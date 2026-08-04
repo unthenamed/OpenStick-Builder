@@ -94,8 +94,8 @@ chmod +x ${CHROOT}/usr/sbin/wifi-ap.sh
 cp -a scripts/msm-firmware-loader.sh ${CHROOT}/usr/sbin
 
 # install kernel
-wget -O - http://mirror.postmarketos.org/postmarketos/master/aarch64/linux-postmarketos-qcom-msm8916-6.12.1-r2.apk \
-    | tar xkzf - -C ${CHROOT} --exclude=.PKGINFO --exclude=.SIGN* 2>/dev/null
+#wget -O - http://mirror.postmarketos.org/postmarketos/master/aarch64/linux-postmarketos-qcom-msm8916-6.12.1-r2.apk \
+tar xkzf kernel/kernel-hmuf02-v05.tar.gz -C ${CHROOT} --exclude=.PKGINFO --exclude=.SIGN* 2>/dev/null
 
 mkdir -p ${CHROOT}/boot/extlinux
 cp configs/extlinux.conf ${CHROOT}/boot/extlinux
